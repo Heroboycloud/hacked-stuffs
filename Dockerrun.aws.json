@@ -1,0 +1,17 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "webwise",
+      "image": "$(DOCKER_IMAGE)",
+      "essential": true,
+      "memoryReservation": $(DOCKER_MEM_RESERVATION),
+      "portMappings": [
+        {
+          "hostPort": $(DOCKER_HOST_PORT),
+          "containerPort": $(DOCKER_CONTAINER_PORT)
+        }
+      ]
+    }
+  ]
+}
